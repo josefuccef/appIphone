@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cards</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="manifest" href="/manifest.json" />
+    </head>
+    <body>
+        <!-- partial:index.partial.html -->
+        <div class="cards-list">
+            <div class="card data">
+                <div class="card_image">
+                    <img
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIA1Hf-XeYlorawIwOlyguNZDoQQ9iadil9d9yLIOa6UwC5BWIHmvz5Y3WXGkAItQamWKm14drHoYI5ZsNqDXAd54jHLbGq5WlgfgvT27MiTSvFI0uXQ29r_GjFtBccgw47mh6r0w5aUrSsRu4ZuYemz1x-Lia9R4II5-C3H-73L2WNG0EvZt6M_4TZirt/s1600/Pourquoi%20Google%20Analytics%20ne%20%28vous%29%20sert%20%C3%A0%20rien%20-%20Le%20blog%20d%27intento.gif"
+                    />
+                </div>
+                <div class="card_title">
+                    <p>DATA BASE</p>
+                </div>
+            </div>
+
+            <div class="card site">
+                <div class="card_image">
+                    <img
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhO8Vlc8KL0qArjHuD3NYoIWw0uv8rCLgv8NCBMkxNwiviQ4ykD94-SeN5N4Pn5n_NxTuD-K83E4ru9ClQODCN-70cwMVtpdXnMpaRHsNDnjWL6LBuycZ54BsF9ASchr8fGp6k0zSnbQuyMWngm5Z1oKOnHpwv7Wl5MHt8siEnvoXlVHyd4NpblTeIgrsmE/s1600/d8bf72a3-c8a3-4e20-abd5-06bd22fd4ff0.gif"
+                    />
+                </div>
+                <div class="card_title title-black">
+                    <p>WEB SITE</p>
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+         <script src="./service-worker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script>
+            document.querySelector(".data").onclick = () => {
+                window.location.href =
+                    "https://armedisdb-production.up.railway.app/login";
+            };
+
+            document.querySelector(".site").onclick = () => {
+                window.location.href = "https://armedismaroc.blogspot.com/";
+            };
+        </script>
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker
+                        .register("/service-worker.js")
+                        .then(function (registration) {
+                            console.log(
+                                "Service Worker registered with scope:",
+                                registration.scope
+                            );
+                        })
+                        .catch(function (error) {
+                            console.log(
+                                "Service Worker registration failed:",
+                                error
+                            );
+                        });
+                });
+            }
+        </script>
+    </body>
+</html>
